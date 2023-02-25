@@ -7,7 +7,6 @@ const Layout = () => {
   const [layout, setLayout] = useState(false);
   useEffect(() => {
     setLayout(false);
-    console.log(window.location.pathname);
     if (window.location.pathname === "/place/" + id) setLayout(true);
   }, [id]);
   return (

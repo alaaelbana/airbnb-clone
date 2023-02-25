@@ -161,7 +161,7 @@ export default () => {
                   >
                     <div className="h-60">
                       <img
-                        src={"http://localhost:4000/uploads/" + place.photos[0]}
+                        src={"https://airbnb-clone-api-bewg.onrender.com/uploads/" + place.photos[0]}
                         alt=""
                       />
                     </div>
@@ -428,7 +428,7 @@ export default () => {
               {addedPhotos?.map((link) => (
                 <div key={link} className="relative">
                   <img
-                    src={"http://localhost:4000/uploads/" + link}
+                    src={"https://airbnb-clone-api-bewg.onrender.com/uploads/" + link}
                     className="h-[200px] rounded-2xl"
                     alt=""
                   />

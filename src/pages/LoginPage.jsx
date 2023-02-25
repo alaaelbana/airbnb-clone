@@ -8,17 +8,19 @@ const LoginPage = () => {
   const [password, setPassword] = useState("123456789");
   const [redirect, setRedirect] = useState(false);
   const { user, setUser } = useContext(UserContext);
-  async function LoginSubmit(e) {
+  function LoginSubmit(e) {
     e.preventDefault();
-    try {
-      const { data } = await axios.post("/login", { email, password });
-      alert("Login successful.");
-      setUser(data);
-      setRedirect(true);
-    } catch (err) {
-      console.log(err);
-      alert("Login failed. please try again later");
-    }
+    axios
+      .post("/login", { email, password })
+      .then(({ data }) => {
+        alert("Login successful.");
+        setUser(data);
+        setRedirect(true);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Login failed. please try again later");
+      });
   }
   if (redirect) {
     return <Navigate to={"/"} />;
