@@ -88,9 +88,12 @@ export default function AccountPage() {
         </Link>
       </nav>
       {subpage === "profile" && (
-        <div className="text-center max-w-lg mx-auto">
-          Logged in as {user.name} {user.email}
-          <button onClick={logout} className="primary max-w-sm mt-2">
+        <div className="text-center max-w-lg mx-auto -mt-4">
+          Logged in as <br />
+          <span className="my-2 inline-block">{user.name}</span>
+          <br />
+          {user.email}
+          <button onClick={logout} className="primary max-w-sm mt-4">
             Logout
           </button>
         </div>

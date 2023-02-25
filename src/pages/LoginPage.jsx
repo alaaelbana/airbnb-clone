@@ -1,30 +1,30 @@
 import axios from "axios";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Cookies from "universal-cookie";
+import { useContext, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
+import { UserContext } from "../UserContext";
 
 const LoginPage = () => {
-  const cookies = new Cookies();
-  const navigate = useNavigate();
-
   const [email, setEmail] = useState("alaaelbana@gmail.com");
   const [password, setPassword] = useState("123456789");
+  const [redirect, setRedirect] = useState(false);
+  const { user, setUser } = useContext(UserContext);
   function LoginSubmit(e) {
     e.preventDefault();
     axios
       .post("/login", { email, password })
       .then(({ data }) => {
         alert("Login successful.");
-        cookies.set("token", data, { path: "/" });
-        navigate("/");
-        window.location.reload();
+        setUser(data);
+        setRedirect(true);
       })
       .catch((err) => {
         console.log(err);
         alert("Login failed. please try again later");
       });
   }
-
+  if (redirect) {
+    return <Navigate to={"/"} />;
+  }
   return (
     <div className="mt-4 grow flex items-center justify-center">
       <div className="mb-[20vh]">
