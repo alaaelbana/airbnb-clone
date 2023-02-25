@@ -7,8 +7,8 @@ const Layout = () => {
   const [layout, setLayout] = useState(false);
   useEffect(() => {
     setLayout(false);
-    if (window.location.href === "http://localhost:5173/place/" + id)
-      setLayout(true);
+    console.log(window.location.pathname);
+    if (window.location.pathname === "/place/" + id) setLayout(true);
   }, [id]);
   return (
     <>
