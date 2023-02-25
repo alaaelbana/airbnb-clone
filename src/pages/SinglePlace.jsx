@@ -77,26 +77,38 @@ const SinglePlace = () => {
         {placeData.address}
       </a>
       {placeData.photos ? (
-        <div className="grid gap-2 grid-cols-[2fr_1fr] mt-4 rounded-2xl overflow-hidden relative">
-          <div className="pb-1 h-[500px]" onClick={() => setImgsSwiper(true)}>
+        <div className="flex flex-wrap md:grid gap-2 grid-cols-[2fr_1fr] mt-4 rounded-2xl overflow-hidden relative">
+          <div
+            className="pb-1 h-[250px] md:h-[500px] w-full"
+            onClick={() => setImgsSwiper(true)}
+          >
             <img
-              src={"https://airbnb-clone-api-bewg.onrender.com/uploads/" + placeData.photos?.[0]}
+              src={
+                "https://airbnb-clone-api-bewg.onrender.com/uploads/" +
+                placeData.photos?.[0]
+              }
               className="aspect-square cursor-pointer"
               alt=""
             />
           </div>
-          <div className="">
-            <div className="pb-1 h-[250px]" onClick={() => setImgsSwiper(true)}>
+          <div className="flex md:block">
+            <div className="pb-1 h-[150px] md:h-[250px]" onClick={() => setImgsSwiper(true)}>
               <img
-                src={"https://airbnb-clone-api-bewg.onrender.com/uploads/" + placeData.photos?.[1]}
-                className="aspect-square cursor-pointer"
+                src={
+                  "https://airbnb-clone-api-bewg.onrender.com/uploads/" +
+                  placeData.photos?.[1]
+                }
+                className="md:aspect-square cursor-pointer"
                 alt=""
               />
             </div>
-            <div className="pb-1 h-[250px]" onClick={() => setImgsSwiper(true)}>
+            <div className="pb-1 h-[150px] md:h-[250px]" onClick={() => setImgsSwiper(true)}>
               <img
-                src={"https://airbnb-clone-api-bewg.onrender.com/uploads/" + placeData.photos?.[2]}
-                className="aspect-square cursor-pointer"
+                src={
+                  "https://airbnb-clone-api-bewg.onrender.com/uploads/" +
+                  placeData.photos?.[2]
+                }
+                className="md:aspect-square cursor-pointer"
                 alt=""
               />
             </div>
@@ -140,7 +152,10 @@ const SinglePlace = () => {
                   <img
                     loading="lazy"
                     className="relative"
-                    src={"https://airbnb-clone-api-bewg.onrender.com/uploads/" + link}
+                    src={
+                      "https://airbnb-clone-api-bewg.onrender.com/uploads/" +
+                      link
+                    }
                   />
                 </div>
               </swiper-slide>
@@ -168,7 +183,7 @@ const SinglePlace = () => {
           </div>
         </div>
       ) : null}
-      <div className="mt-10 grid grid-cols-[2fr_1fr]">
+      <div className="mt-10 md:grid grid-cols-[2fr_1fr]">
         <div className="text-sm pr-[10%]">
           <div className="text-xl mb-2 font-medium">description</div>
           <div>{placeData.description} </div>
