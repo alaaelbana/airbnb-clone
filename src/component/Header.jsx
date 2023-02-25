@@ -87,7 +87,10 @@ const Header = ({ layout }) => {
               />
             </svg>
           </div>
-          <div>{user?.name}</div>
+          <div>
+            {user?.name}
+            {!user ? "Login" : null}
+          </div>
         </Link>
       </div>
     </header>

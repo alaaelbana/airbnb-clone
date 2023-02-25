@@ -6,8 +6,7 @@ import { UserContext } from "../UserContext";
 const LoginPage = () => {
   const [email, setEmail] = useState("alaaelbana@gmail.com");
   const [password, setPassword] = useState("123456789");
-  const [redirect, setRedirect] = useState(false);
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser, ready } = useContext(UserContext);
   function LoginSubmit(e) {
     e.preventDefault();
     axios
@@ -15,14 +14,14 @@ const LoginPage = () => {
       .then(({ data }) => {
         alert("Login successful.");
         setUser(data);
-        setRedirect(true);
       })
       .catch((err) => {
         console.log(err);
         alert("Login failed. please try again later");
       });
   }
-  if (redirect) {
+
+  if (ready && user) {
     return <Navigate to={"/"} />;
   }
   return (

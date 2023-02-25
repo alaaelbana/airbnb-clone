@@ -46,9 +46,8 @@ const SinglePlace = () => {
     };
     axios
       .post("/bookings", data)
-      .then((response) => {
-        const { data } = response;
-        console.log(data);
+      .then(() => {
+        navigate("/account/bookings/");
       })
       .catch((err) => {
         console.log(err);
@@ -92,7 +91,10 @@ const SinglePlace = () => {
             />
           </div>
           <div className="flex md:block">
-            <div className="pb-1 h-[150px] md:h-[250px]" onClick={() => setImgsSwiper(true)}>
+            <div
+              className="pb-1 h-[150px] md:h-[250px]"
+              onClick={() => setImgsSwiper(true)}
+            >
               <img
                 src={
                   "https://airbnb-clone-api-bewg.onrender.com/uploads/" +
@@ -102,7 +104,10 @@ const SinglePlace = () => {
                 alt=""
               />
             </div>
-            <div className="pb-1 h-[150px] md:h-[250px]" onClick={() => setImgsSwiper(true)}>
+            <div
+              className="pb-1 h-[150px] md:h-[250px]"
+              onClick={() => setImgsSwiper(true)}
+            >
               <img
                 src={
                   "https://airbnb-clone-api-bewg.onrender.com/uploads/" +
