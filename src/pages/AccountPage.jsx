@@ -29,7 +29,7 @@ export default function AccountPage() {
   if (!ready) return "Loading";
 
   if (ready && !user) {
-    return <Navigate to={"/login"} />;
+    return <Navigate to={"/"} />;
   }
 
   return (
