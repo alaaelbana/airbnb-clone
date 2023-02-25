@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useContext } from "react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, useNavigate, Navigate, useParams } from "react-router-dom";
 import { UserContext } from "../UserContext";
 import Places from "./Places";
 
 export default function AccountPage() {
   const { user, ready } = useContext(UserContext);
+  const navigate = useNavigate();
 
   let { subpage } = useParams();
   if (subpage === undefined) {
@@ -13,6 +14,7 @@ export default function AccountPage() {
   }
   async function logout() {
     await axios.post("/logout");
+    navigate("/");
     window.location.reload();
   }
   function linkClasses(type = null) {
