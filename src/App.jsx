@@ -12,8 +12,7 @@ axios.defaults.withCredentials = true;
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen ">
-      <h1>HIIIIIIII</h1>
+    <div className="flex flex-col min-h-screen">
       <UserContextProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
