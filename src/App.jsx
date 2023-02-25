@@ -7,7 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import SinglePlace from "./pages/SinglePlace";
 import { UserContextProvider } from "./UserContext";
-axios.defaults.baseURL = "https://airbnb-clone-api-bewg.onrender.com/";
+axios.defaults.baseURL = "https://airbnb-clone-api-bewg.onrender.com";
 axios.defaults.withCredentials = true;
 
 function App() {

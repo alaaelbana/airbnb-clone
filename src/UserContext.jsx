@@ -5,10 +5,15 @@ export function UserContextProvider({ children }) {
   const [user, setUser] = useState(null);
   const [ready, setReady] = useState(false);
   useEffect(() => {
-    axios.get("/profile").then(({ data }) => {
-      setUser(data);
-      setReady(true);
-    });
+    axios
+      .get("/profile")
+      .then(({ data }) => {
+        setUser(data);
+        setReady(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
   return (
     <UserContext.Provider value={{ user, setUser, ready }}>

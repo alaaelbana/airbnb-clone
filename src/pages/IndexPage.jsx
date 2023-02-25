@@ -26,7 +26,10 @@ const IndexPage = () => {
                       <swiper-slide key={link}>
                         <img
                           loading="lazy"
-                          src={"https://airbnb-clone-api-bewg.onrender.com/uploads/" + link}
+                          src={
+                            "https://airbnb-clone-api-bewg.onrender.com/uploads/" +
+                            link
+                          }
                         />
                       </swiper-slide>
                     ) : (
